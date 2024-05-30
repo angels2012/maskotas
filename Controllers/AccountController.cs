@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using maskotas.DataTransferObjects;
 using maskotas.Models;
 using maskotas.Services;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,12 +46,18 @@ namespace maskotas.Controllers
             if (!roleAdditionResult.Succeeded)
                 return StatusCode(500, roleAdditionResult.Errors);
 
+            var Token = _tokenService.CreateToken(user);
             RegisteredUserDto newUser = new RegisteredUserDto
             {
                 Username = user.UserName,
                 Email = user.Email,
-                Token = _tokenService.CreateToken(user)
+                Token = Token
             };
+            CookieOptions cookieOptions = new CookieOptions
+            {
+                HttpOnly = true
+            };
+            Response.Cookies.Append("jwtToken", Token, cookieOptions);
             return Ok(newUser);
         }
 

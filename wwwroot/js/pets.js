@@ -1,11 +1,13 @@
 import * as AnonView from './anonView.js';
 import * as AdminView from './adminView.js'
 
-function checkLogin() {
-    return true;
+async function checkLogin() {
+    if (localStorage.getItem('jwt') != null) {
+        return true;
+    }
 }
 
-let isLoggedIn = checkLogin();
+let isLoggedIn = await checkLogin();
 
 if (!isLoggedIn) {
     AnonView.setupView();

@@ -7,6 +7,7 @@ using maskotas.DataTransferObjects;
 using maskotas.Extensions;
 using maskotas.Models;
 using maskotas.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace maskotas.Controllers
 {
     [ApiController]
+    [Authorize]
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryRepository _categoryRepository;

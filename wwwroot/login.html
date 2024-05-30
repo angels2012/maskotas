@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poetsen+One&display=swap"
         rel="stylesheet">
-    <script type="module" src="./js/site.js"></script>
     <script type="module" src="./js/login.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/site.css">
@@ -51,14 +50,14 @@
 
     <main>
         <section>
-            <form id="loginForm" action="/api/login" method="post">
+            <form id="loginForm" action="/api/account/login" method="POST">
                 <div id="loginPanel">
                     <h1>Login</h1>
                     <label for="">
                         <p>Username</p> <input placeholder="Username" type="text" name="username" id="username">
                     </label>
                     <label for="">
-                        <p>Password</p> <input placeholder="Password" type="password" name="username" id="username">
+                        <p>Password</p> <input placeholder="Password" type="password" name="password" id="password">
                     </label>
                     <button type="submit">Go</button>
                 </div>

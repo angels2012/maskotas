@@ -8,11 +8,13 @@ using maskotas.DataTransferObjects;
 using maskotas.Extensions;
 using maskotas.Models;
 using maskotas.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace maskotas.Controllers
 {
     [ApiController]
+    [Authorize]
     public class PetController : ControllerBase
     {
         private readonly IPetRepository _petRepository;
@@ -23,6 +25,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("/api/pets")]
         public async Task<IActionResult> GetAll()
         {

@@ -6,11 +6,13 @@ using maskotas.DataTransferObjects;
 using maskotas.Extensions;
 using maskotas.Models;
 using maskotas.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace maskotas.Controllers
 {
     [ApiController]
+    [Authorize]
     public class LocationController : ControllerBase
     {
         private readonly ILocationRepository _locationRepository;

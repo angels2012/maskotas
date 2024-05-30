@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace maskotas.Controllers
 {
     [ApiController]
+    [Authorize]
     public class BreedController : ControllerBase
     {
         private readonly IBreedRepository _breedRepository;
@@ -62,7 +63,6 @@ namespace maskotas.Controllers
             return StatusCode(500);
         }
 
-        [Authorize]
         [HttpDelete]
         [Route("/api/breeds/{id:int}")]
         public async Task<IActionResult> Delete(int id)
