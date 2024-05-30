@@ -21,7 +21,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/breed/getall")]
+        [Route("/api/breeds")]
         public async Task<IActionResult> GetAll()
         {
             var breeds = await _breedRepository.GetAllAsync();
@@ -33,7 +33,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/breed/getbyid/{id:int}")]
+        [Route("/api/breeds/{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var breeds = await _breedRepository.GetAsync(id);
@@ -45,7 +45,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPost]
-        [Route("/api/breed/add")]
+        [Route("/api/breeds")]
         public async Task<IActionResult> Add([FromBody] BreedPostDto breedFromRequest)
         {
             Breed breed = breedFromRequest.ToModel();
@@ -64,7 +64,7 @@ namespace maskotas.Controllers
 
         [Authorize]
         [HttpDelete]
-        [Route("/api/breed/delete/{id:int}")]
+        [Route("/api/breeds/{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
             bool wasDeleteSuccessful = await _breedRepository.DeleteAsync(id);
@@ -76,7 +76,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPut]
-        [Route("/api/breed/update/{id:int}")]
+        [Route("/api/breeds/{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] BreedPutDto breedDto)
         {
             Breed updatedBreed = await _breedRepository.UpdateAsync(breedDto, id);

@@ -24,7 +24,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/category/getall")]
+        [Route("/api/categories")]
         public async Task<IActionResult> GetAll()
         {
             var categories = await _categoryRepository.GetAllAsync();
@@ -36,7 +36,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/category/getbyid/{id:int}")]
+        [Route("/api/categories/{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var category = await _categoryRepository.GetAsync(id);
@@ -48,7 +48,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPost]
-        [Route("/api/category/add")]
+        [Route("/api/categories")]
         public async Task<IActionResult> Add([FromBody] CategoryPostDto categoryFromRequest)
         {
             Category category = categoryFromRequest.ToModel();
@@ -66,7 +66,7 @@ namespace maskotas.Controllers
         }
 
         [HttpDelete]
-        [Route("/api/category/delete/{id:int}")]
+        [Route("/api/categories/{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
             bool wasDeleteSuccessful = await _categoryRepository.DeleteAsync(id);
@@ -79,7 +79,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPut]
-        [Route("/api/category/update/{id:int}")]
+        [Route("/api/categories/{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] CategoryPutDto categoryDto)
         {
             Category updatedCategory = await _categoryRepository.UpdateAsync(categoryDto, id);

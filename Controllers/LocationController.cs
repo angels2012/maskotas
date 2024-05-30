@@ -21,7 +21,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/location/getall")]
+        [Route("/api/locations")]
         public async Task<IActionResult> GetAll()
         {
             var locations = await _locationRepository.GetAllAsync();
@@ -33,7 +33,7 @@ namespace maskotas.Controllers
         }
 
         [HttpGet]
-        [Route("/api/location/getbyid/{id:int}")]
+        [Route("/api/locations/{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var location = await _locationRepository.GetAsync(id);
@@ -45,7 +45,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPost]
-        [Route("/api/location/add")]
+        [Route("/api/locations")]
         public async Task<IActionResult> Add([FromBody] LocationPostDto locationDto)
         {
             Location location = locationDto.ToModel();
@@ -63,7 +63,7 @@ namespace maskotas.Controllers
         }
 
         [HttpDelete]
-        [Route("/api/location/delete/{id:int}")]
+        [Route("/api/locations/{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             bool result = await _locationRepository.DeleteAsync(id);
@@ -74,7 +74,7 @@ namespace maskotas.Controllers
         }
 
         [HttpPut]
-        [Route("/api/location/update/{id:int}")]
+        [Route("/api/locations/{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] LocationPutDto locationDto)
         {
             Location updatedLocation = await _locationRepository.UpdateAsync(locationDto, id);
