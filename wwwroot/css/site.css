@@ -1,0 +1,9 @@
+:root {
+    --orange-accent: #f4a104;
+    --pet-card-width: 220px;
+    --content-left-margin: 100px;
+}
+
+* {
+    box-sizing: border-box;
+}

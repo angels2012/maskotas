@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poetsen+One&display=swap"
+        rel="stylesheet">
+    <script type="module" src="./js/site.js"></script>
+    <script type="module" src="./js/login.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/site.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <title>maskotas</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar-logo-container">
+                <a href="./">
+                    <img class="navbar-logo" src="./img/maskotas-logo-grande.png" alt="site logo">
+                </a>
+            </div>
+            <div class="navbar-buttons-container">
+                <ul>
+                    <li>
+                        <a href="./index.html" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pets.html" class="nav-link">
+                            Pets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./login.html" class="nav-link current-page-in-nav">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <section>
+            <form id="loginForm" action="/api/login" method="post">
+                <div id="loginPanel">
+                    <h1>Login</h1>
+                    <label for="">
+                        <p>Username</p> <input placeholder="Username" type="text" name="username" id="username">
+                    </label>
+                    <label for="">
+                        <p>Password</p> <input placeholder="Password" type="password" name="username" id="username">
+                    </label>
+                    <button type="submit">Go</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

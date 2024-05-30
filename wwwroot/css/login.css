@@ -1,0 +1,66 @@
+main * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    height: 450px;
+    margin-top: 50px;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+}
+
+main form,
+#loginPanel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#loginPanel>* {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+#loginPanel {
+    background-color: rgba(0, 0, 0, 0.022);
+    border: 1px solid black;
+
+    border-radius: 10px;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+input {
+    width: 170px;
+}
+
+label p {
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+button[type="submit"] {
+    width: fit-content;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: "Poetsen One", sans-serif;
+    border: none;
+    font-size: 1.5em;
+}
+
+button[type="submit"]:hover {
+    color: var(--orange-accent);
+    cursor: pointer;
+}

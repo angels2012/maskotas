@@ -1,0 +1,257 @@
+.hidden {
+    display: none;
+}
+
+.anon-view .pet-image {
+    width: 350px;
+}
+
+.anon-view main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.anon-view main * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.anon-view #heroCard {
+    margin-top: 0px;
+    width: min-content;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.anon-view .pet-details {
+    width: 100%;
+}
+
+.anon-view .pet-detail span {
+    font-family: "Poetsen One", sans-serif;
+}
+
+.anon-view .pet-detail {
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.anon-view .pet-detail span {
+    color: var(--orange-accent);
+    text-shadow:
+        3px 3px black,
+        3px -3px black,
+        -3px 3px black,
+        -3px -3px black;
+    font-size: 25px;
+}
+
+.anon-view .arrow {
+    height: 54px;
+    position: fixed;
+}
+
+.anon-view .arrow:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(63%) sepia(72%) saturate(1991%) hue-rotate(3deg) brightness(102%) contrast(97%);
+}
+
+.anon-view #rightArrow {
+    right: 200px;
+    transform: scaleX(-1);
+}
+
+.anon-view #leftArrow {
+    left: 200px;
+}
+
+.anon-view #leftArrow,
+.anon-view #rightArrow {
+    top: 50%;
+}
+
+
+/* ADMIN VIEW */
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+:root {
+    --admin-card-width: 300px;
+    --pet-detail-margin-left: 10px;
+    --grid-card-border-radius: 20px;
+    --grid-card-line-color: black;
+}
+
+.error {
+    color: red;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =================================================
+    GRID VIEW
+   ================================================= */
+.admin-view.grid-view .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    gap: 20px;
+}
+
+.admin-view.grid-view main * {
+    font-size: 1.03em;
+}
+
+.admin-view.grid-view main {
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 200px;
+}
+
+.admin-view.grid-view .pet-card {
+    border: 4px solid var(--grid-card-line-color);
+    border-radius: var(--grid-card-border-radius);
+    padding-bottom: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.77);
+}
+
+.admin-view.grid-view .pet-card * {
+    width: 100%;
+}
+
+.admin-view.grid-view .pet-details {
+    width: 100%;
+    align-self: flex-start;
+}
+
+
+.admin-view.grid-view .pet-details * {
+    border-top: 3px solid var(--orange-accent);
+    padding-left: 20px;
+}
+
+.admin-view.grid-view main * {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.2em;
+    color: white;
+    font-weight: 700;
+}
+
+.admin-view.grid-view .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-view.grid-view .pet-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-view.grid-view .pet-image {
+    width: 200px;
+    border-radius: var(--grid-card-border-radius);
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.admin-view.grid-view .pet-image-container:hover {
+    filter: opacity(0.5);
+}
+
+/* =================================================
+    SINGLE VIEW
+   ================================================= */
+
+.admin-view.single-view .pet-image {
+    width: 350px;
+}
+
+.admin-view.single-view main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-view.single-view main * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-view.single-view #heroCard {
+    margin-top: 0px;
+    width: min-content;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-view.single-view .pet-details {
+    width: 100%;
+}
+
+.admin-view.single-view span {
+    font-family: "Poetsen One", sans-serif;
+}
+
+.admin-view.single-view .pet-detail {
+    display: inline;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.admin-view.single-view span {
+    color: var(--orange-accent);
+    text-shadow:
+        3px 3px black,
+        3px -3px black,
+        -3px 3px black,
+        -3px -3px black;
+    font-size: 25px;
+}
+
+.admin-view.single-view .editing-text {
+    color: rgba(0, 0, 0, 0.341);
+}
+
+.admin-view.single-view .edit-button:hover {
+    background-color: var(--orange-accent);
+}
+
+.admin-view.single-view .cancel-button:hover {
+    background-color: red;
+}
+
+.admin-view.single-view button {
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 1.2em;
+}
+
+.admin-view.single-view .cancel-button {
+    background-color: #ff000099;
+    border: 3px solid red;
+    ;
+}
+
+.admin-view.single-view .edit-button {
+    background-color: #f4a10455;
+    border: 3px solid var(--orange-accent);
+}
+
+.admin-view.single-view .submit-button {
+    background-color: rgb(5, 219, 5);
+    padding-left: 10px;
+    padding-right: 10px;
+}
